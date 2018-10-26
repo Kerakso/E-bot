@@ -49,11 +49,11 @@ bot.on("message", async msg => {
     	});
     }
 
-    if(msg.content.startsWith(prefix + "łagier")) {
+    if(msg.content.startsWith(prefix + "gulag")) {
     	let user = msg.mentions.members.first();
-    	let role = msg.guild.roles.find("500338326365274122");
+    	let role = msg.guild.roles.find("name", "Виезиен Лагру");
 
-    	if(msg.user.roles.has("500338326365274122")) {
+    	if(msg.user.roles.has(role)) {
     		msg.reply("towarzyszu! Więzień już jest w łagrze!");
     	} else {
     		user.addRole(role);
