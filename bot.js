@@ -43,7 +43,7 @@ bot.on("message", async msg => {
     if(msg.content.startsWith(prefix + "setavatar")) {
     	if(msg.author.id !== "146599241022832640") return;
     	foka = msg.content.split(' ');
-    	wilk = foka.slice(2).join(' ');
+    	wilk = foka.slice(1).join(' ');
     	bot.user.setAvatar(wilk).catch((err) => {
     		if(err) return msg.reply("coś nie tak poszło, sprawdź link i daj bezpośredni link do obrazka.");
     	});
