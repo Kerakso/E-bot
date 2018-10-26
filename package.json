@@ -1,5 +1,5 @@
 {
-	"name": "E-bot",
+	"name": "eee-bot",
 	"description": "A private bot for my server",
 	"version": "1.0.0",
 	"main": "bot.js",
@@ -10,6 +10,6 @@
 		"discord.js": "11.1.0",
 		"request": "2.81.0",
 		"ytdl-core" :  "github:fent/node-ytdl-core#master",
-		"random-number": "0.0.9",
+		"random-number": "0.0.9"
 	}
 }
