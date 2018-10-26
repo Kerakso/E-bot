@@ -49,7 +49,7 @@ bot.on("message", async msg => {
     	});
     }
 
-    if(msg.content.toLowerCase().startsWith(prefix + "łagier")) {
+    if(msg.content.startsWith(prefix + "łagier")) {
     	let user = msg.mentions.members.first();
     	let role = msg.guild.roles.find("500338326365274122");
 
