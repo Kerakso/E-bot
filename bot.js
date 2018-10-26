@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const prefix = "Towarzyszu ";
+const prefix = "f!";
 
 bot.on("ready", () => {
 	console.log("Połączony!");
