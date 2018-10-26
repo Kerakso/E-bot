@@ -1,5 +1,5 @@
 {
-	"name": "E-bot",
+	"name": "eee-bot",
 	"description": "A private bot for my server",
 	"version": "1.0.0",
 	"main": "bot.js",
