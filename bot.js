@@ -27,7 +27,7 @@ bot.on("guildMemberAdd", member => {
 	let role = member.guild.roles.find("name", "Класа роботницза");
 
 	member.addRole(role);
-	bot.channels.get("500328272232710177").send("Łooo suka, dostaliśmy nowego towarzysza! " + member.username + " przywitaj się z innymi robotnikami i buduj gospodarkę Sowieckiemu Fokarium!");
+	bot.channels.get("500328272232710177").send("Łooo suka, dostaliśmy nowego towarzysza! " + member.user.username + " przywitaj się z innymi robotnikami i buduj gospodarkę Sowieckiemu Fokarium!");
 });
 
 bot.on("message", msg => {
@@ -49,3 +49,6 @@ bot.on("message", msg => {
     	});
     }
 });
+
+console.log("Łączenie..");
+bot.login(process.env.BOT_TOKEN);
