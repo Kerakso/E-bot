@@ -30,7 +30,7 @@ bot.on("guildMemberAdd", member => {
 	bot.channels.get("500328272232710177").send("Łooo suka, dostaliśmy nowego towarzysza! " + member.user.username + " przywitaj się z innymi robotnikami i buduj gospodarkę Sowieckiemu Fokarium!");
 });
 
-bot.on("message", msg => {
+bot.on("message", async msg => {
 	if(msg.author.bot) return false;
     if(!msg.guild) return;
 
@@ -47,6 +47,18 @@ bot.on("message", msg => {
     	bot.user.setAvatar(wilk).catch((err) => {
     		if(err) return msg.reply("coś nie tak poszło, sprawdź link i daj bezpośredni link do obrazka.");
     	});
+    }
+
+    if(msg.content.toLowerCase().startsWith(prefix + "łagier")) {
+    	let user = msg.mentions.members.first();
+    	let role = msg.guild.roles.find("500338326365274122");
+
+    	if(msg.user.roles.has("500338326365274122")) {
+    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
+    	} else {
+    		user.addRole(role);
+    		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
+    	}
     }
 });
 
