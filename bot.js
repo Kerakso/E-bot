@@ -3,6 +3,10 @@ const bot = new Discord.Client();
 
 const prefix = "f!";
 
+let wiezien = "500338326365274122";
+let robotnik = "500331500882100224";
+let umarniety = "501443297772961792";
+
 bot.on("ready", () => {
 	console.log("Połączony!");
 	console.log("Gotowy\n");
@@ -51,12 +55,14 @@ bot.on("message", async msg => {
 
     if(msg.content.startsWith(prefix + "gulag")) {
     	let user = msg.mentions.members.first();
-    	let role = msg.guild.roles.find("name", "Виезиен Лагру");
+    	let role = msg.guild.roles.find(wiezien);
+    	let revRole = msg.guild.roles.find(robotnik);
 
     	if(msg.user.roles.has(role)) {
     		msg.reply("towarzyszu! Więzień już jest w łagrze!");
     	} else {
     		user.addRole(role);
+    		user.removeRole(revRole).catch(console.error);
     		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
     	}
     }
