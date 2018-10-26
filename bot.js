@@ -54,16 +54,20 @@ bot.on("message", async msg => {
     }
 
     if(msg.content.startsWith(prefix + "gulag")) {
-    	let user = msg.mentions.members.first();
-    	let role = msg.guild.roles.find(wiezien);
-    	let revRole = msg.guild.roles.find(robotnik);
+    	if(msg.member.roles.has("500331296975749122")) {
+    		let user = msg.mentions.members.first();
+	    	let role = msg.guild.roles.find(wiezien);
+	    	let revRole = msg.guild.roles.find(robotnik);
 
-    	if(msg.user.roles.has(role)) {
-    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
+	    	if(msg.user.roles.has(role)) {
+	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
+	    	} else {
+	    		user.addRole(role);
+	    		user.removeRole(revRole).catch(console.error);
+	    		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
+	    	}
     	} else {
-    		user.addRole(role);
-    		user.removeRole(revRole).catch(console.error);
-    		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
+    		msg.reply("ty chyba głupi jesteś, że chcesz to użyć bez uprawnień KGB");
     	}
     }
 });
