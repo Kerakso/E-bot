@@ -56,8 +56,8 @@ bot.on("message", async msg => {
     if(msg.content.startsWith(prefix + "gulag")) {
     	if(msg.member.roles.has("500331296975749122")) {
     		let user = msg.mentions.members.first();
-	    	let role = msg.guild.roles.find(wiezien);
-	    	let revRole = msg.guild.roles.find(robotnik);
+	    	let role = msg.guild.roles.get(wiezien);
+	    	let revRole = msg.guild.roles.get(robotnik);
 
 	    	if(msg.user.roles.has(role)) {
 	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
