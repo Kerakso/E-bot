@@ -53,6 +53,15 @@ bot.on("message", async msg => {
     	});
     }
 
+    if(msg.content.startsWith(prefix + "setnickname")) {
+    	if(msg.author.id !== "146599241022832640") return;
+    	foka = msg.content.split(' ');
+    	wilk = foka.slice(1).join(' ');
+    	bot.user.setUsername(wilk).catch((err) => {
+    		if(err) return msg.reply("coś poszło nie tak, sprawdź dokładnie wpisany nick.");
+    	});
+    }
+
     if(msg.content.startsWith(prefix + "gulag")) {
     	if(msg.member.roles.has("500331296975749122")) {
     		let user = msg.mentions.members.first();
