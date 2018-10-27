@@ -63,7 +63,7 @@ bot.on("message", async msg => {
 	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
 	    	} else {
 	    		user.addRole(role);
-	    		user.removeRole(revRole).catch(console.error);
+	    		user.removeRole(revRole);
 	    		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
 	    	}
     	} else {
