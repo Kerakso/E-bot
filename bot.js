@@ -84,9 +84,10 @@ bot.on("message", async msg => {
     	let liczbaWiezien = msg.guild.roles.get(wiezien).members;
     	if(liczbaWiezien > 3) {
     		msg.channel.send(`Posiadamy ${liczbaWiezien.size} więźniów w łagrach.. Coś mało ich mamy, trzeba któregoś robotnika wrobić w zdradę kraju.`).catch(console.error);
-    	}
-    	if(liczbaWiezien < 4) {
+    	} else if(liczbaWiezien < 4) {
     		msg.channel.send(`Posiadamy ${liczbaWiezien.size} więźniów w łagrach.. Trza kogoś rozstrzelać.`).catch(console.error);
+    	} else {
+    		msg.reply("foka się stała i ni mu");
     	}
     }
 });
