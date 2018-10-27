@@ -3,9 +3,9 @@ const bot = new Discord.Client();
 
 const prefix = "f!";
 
-let wiezien = "500338326365274122";
-let robotnik = "500331500882100224";
-let umarniety = "501443297772961792";
+var wiezien = "500338326365274122";
+var robotnik = "500331500882100224";
+var umarniety = "501443297772961792";
 
 bot.on("ready", () => {
 	console.log("Połączony!");
