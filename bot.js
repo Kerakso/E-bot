@@ -11,6 +11,8 @@ bot.on("ready", () => {
 	console.log("Połączony!");
 	console.log("Gotowy\n");
 
+	var liczbaWiezien = bot.guild.roles.get(wiezien).members;
+
 	var i = 0;
     var loop = setInterval(function() {
         i++;
@@ -19,7 +21,7 @@ bot.on("ready", () => {
         var time = new Date();
 
         if(i == 1) bot.user.setPresence({game: { name: 'Communist Manifest', type: 3 }});
-        else if (i == 2) bot.user.setPresence({game: { name: bot.users.size + ' więźniów łagrów', type: 2 }});
+        else if (i == 2) bot.user.setPresence({game: { name: `${liczbaWiezien.size} więźniów łagrów`, type: 2 }});
     }, 60000);
 });
 
