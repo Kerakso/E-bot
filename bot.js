@@ -123,6 +123,10 @@ bot.on("message", async msg => {
     		msg.channel.send(`Posiadamy ${liczbaWiezien.size} więźniów w łagrach.. Trza kogoś rozstrzelać.`).catch(console.error);
     	}
     }
+
+    if(msg.content === prefix + "respawn") {
+    	msg.reply("nie posiadasz serum wskrzeszenia.");
+    }
 });
 
 console.log("Łączenie..");
