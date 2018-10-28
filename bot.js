@@ -68,7 +68,7 @@ bot.on("message", async msg => {
 	    	let role = msg.guild.roles.get(wiezien);
 	    	let revRole = msg.guild.roles.get(robotnik);
 
-	    	if(msg.user.roles.has(wiezien)) {
+	    	if(user.roles.has(wiezien)) {
 	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
 	    	} else {
 	    		user.addRole(role);
