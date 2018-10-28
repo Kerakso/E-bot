@@ -131,9 +131,12 @@ bot.on("message", async msg => {
     if(msg.content.startsWith(prefix + "daj")) {
     	if(msg.member.roles.has("500331338956537857")) {
     		let user = msg.mentions.members.first();
-
-    		serumW[msg.user.id] = 1;
-    		msg.channel.send("Kostnica \"Pod Twoją Foką\" dała " + user.user.username + " serum wskrzeszenia.");
+    		if(serumW[msg.user.id] == 1) {
+    			msg.reply(user.user.username + " już posiada swoje serum wskrzeszenia.");
+    		} else {
+				serumW[msg.user.id] = 1;
+    			msg.channel.send("Kostnica \"Pod Twoją Foką\" dała " + user.user.username + " serum wskrzeszenia.");
+    		}
     	} else {
     		msg.reply("foka jesteś.");
     	}
