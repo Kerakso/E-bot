@@ -107,7 +107,9 @@ bot.on("message", async msg => {
 
     		user.addRole(role);
     		user.removeRole(revRole);
-    		msg.reply("Więzień " + user.user.username + " został rozstrzelany z powodu psucia gospodarki naszego kraju.");
+    		msg.reply("Więzień " + user.user.username + " został rozstrzelany z powodu psucia gospodarki naszego kraju.", {
+    			file: url("https://www.fsegames.eu/forum/proxy.php?request=http%3A%2F%2F25.media.tumblr.com%2F82ecb0736238989cdf7db38ae6d7fd19%2Ftumblr_mw3zboGn9k1qlpxm1o1_500.gif&hash=813729f77b557ce7d20b8b312f0c4121");
+    		});
     	} else if(!user.roles.has(wiezien)) {
     		msg.reply("Osoba do rozstrzelania musi być więźniem łagru!");
     	} else {
