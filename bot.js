@@ -153,8 +153,8 @@ bot.on("message", async msg => {
 			serumW[msg.member.id] = 0;
 		} else {
 			msg.reply("nie posiadasz serum wskrzeszenia.");
-		}}
-    }
+		}
+	}
 });
 
 console.log("Łączenie..");
