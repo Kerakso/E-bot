@@ -8,6 +8,8 @@ var robotnik = "500331500882100224";
 var umarniety = "501443297772961792";
 var kgb = "500331296975749122";
 
+var serumW = {}
+
 bot.on("ready", () => {
 	console.log("Połączony!");
 	console.log("Gotowy\n");
@@ -126,8 +128,32 @@ bot.on("message", async msg => {
     	}
     }
 
+    if(msg.content.startsWith(prefix + "daj")) {
+    	if(msg.member.roles.has("500331338956537857")) {
+    		let user = msg.mentions.members.first();
+
+    		serumW[msg.user.id] = 1;
+    		msg.channel.send("Kostnica \"Pod Twoją Foką\" dała " + user.user.username + " serum wskrzeszenia.");
+    	} else {
+    		msg.reply("foka jesteś.");
+    	}
+    }
+
     if(msg.content === prefix + "respawn") {
-    	msg.reply("nie posiadasz serum wskrzeszenia.");
+    	if(!serumW[msg.member.id]) serumW[msg.member.id] = 1;
+
+		if(serumW[msg.member.id] == 1) {
+			let role = msg.guild.roles.get(robotnik);
+			let revRole = msg.guild.roles.get(umarniety);
+
+			msg.member.addRole(role);
+			msg.member.removeRole(revRole);
+			msg.reply("wykorzystałeś swoje serum wskrzeszenia!");
+
+			serumW[msg.member.id] = 0;
+		} else {
+			msg.reply("nie posiadasz serum wskrzeszenia.");
+		}}
     }
 });
 
