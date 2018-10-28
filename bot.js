@@ -143,8 +143,6 @@ bot.on("message", async msg => {
     }
 
     if(msg.content === prefix + "respawn") {
-    	if(!serumW[msg.member.id]) serumW[msg.member.id] = 1;
-
 		if(serumW[msg.member.id] == 1) {
 			let role = msg.guild.roles.get(robotnik);
 			let revRole = msg.guild.roles.get(umarniety);
