@@ -119,6 +119,22 @@ bot.on("message", async msg => {
     	}
     }
 
+    if(msg.content.startsWith(prefix + "spałuj")) {
+    	let user = msg.mentions.members.first();
+
+    	if(msg.member.roles.has("501447795413352463")) {
+    		msg.channel.send(user.user.username + "został spałowany przez naszą milicje za przeciwdziałanie rządowi.", {
+    			file: "https://cdn.discordapp.com/attachments/163271631463120896/507340866889973783/2d2656f95c33.gif"
+    		});
+    	} else if(!msg.member.roles.has("501447795413352463")) {
+    		msg.reply("najpierw dołącz do Milicji, ty dzbanie.");
+    	} else if(!user) {
+    		msg.reply("najpierw wskaż nam osobę do spałowania.");
+    	} else {
+    		msg.reply("weź to zostaw foko.");
+    	}
+    }
+
     if(msg.content === prefix + "wiezniowie") {
     	let liczbaWiezien = msg.guild.roles.get(wiezien).members;
     	if(liczbaWiezien.size < 3) {
