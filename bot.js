@@ -123,7 +123,7 @@ bot.on("message", async msg => {
     	let user = msg.mentions.members.first();
 
     	if(msg.member.roles.has("501447795413352463")) {
-    		msg.channel.send(user.user.username + "został spałowany przez naszą milicje za przeciwdziałanie rządowi.", {
+    		msg.channel.send(user.user.username + " został spałowany przez naszą milicje za przeciwdziałanie rządowi.", {
     			file: "https://cdn.discordapp.com/attachments/163271631463120896/507340866889973783/2d2656f95c33.gif"
     		});
     	} else if(!msg.member.roles.has("501447795413352463")) {
