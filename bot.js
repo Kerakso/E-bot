@@ -79,19 +79,16 @@ bot.on("message", async msg => {
 
 	    	if(user.roles.has(wiezien)) {
 	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
-	    	} 
-	    	if(user.roles.has(kgb) || userP || userK || userC || userM) {
+	    	} else if(user.roles.has(kgb) || userP || userK || userC || userM) {
     			msg.reply("Niestety, nie możesz wprowadzić do łagra członka naszych służb.");
-    		}
-	    	if(!user) {
+    		} else if(!user) {
 	    		msg.reply("wskaż mi najpierw zdrajce narodu.");
 	    	} else {
 	    		user.addRole(role);
 	    		user.removeRole(revRole);
 	    		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
 	    	} 
-    	} 
-    	if(msg.member.roles.has(wiezien)) {
+    	} else if(msg.member.roles.has(wiezien)) {
     		let role = msg.guild.roles.get(umarniety);
     		let revRole = msg.guild.roles.get(wiezien);
 
