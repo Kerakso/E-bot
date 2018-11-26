@@ -72,29 +72,32 @@ bot.on("message", async msg => {
     	let userC = userA.roles.has("500332041439674368");
     	let userM = userA.roles.has("501447795413352463");
 
-    	if(msg.member.roles.has(kgb) || !userP || !userK || !userC || !userM) {
+    	if(msg.member.roles.has(kgb)) {
     		let user = msg.mentions.members.first();
 	    	let role = msg.guild.roles.get(wiezien);
 	    	let revRole = msg.guild.roles.get(robotnik);
 
 	    	if(user.roles.has(wiezien)) {
 	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
-	    	} else if(!user) {
+	    	} 
+	    	if(msg.user.roles.has(kgb) || userP || userK || userC || userM) {
+    			msg.reply("Niestety, nie możesz wprowadzić do łagra członka naszych służb.");
+    		}
+	    	if(!user) {
 	    		msg.reply("wskaż mi najpierw zdrajce narodu.");
 	    	} else {
 	    		user.addRole(role);
 	    		user.removeRole(revRole);
 	    		msg.channel.send("Zdrajca narodu " + user.user.username + " został przewieziony do łagra.");
 	    	} 
-    	} else if(msg.member.roles.has(wiezien)) {
+    	} 
+    	if(msg.member.roles.has(wiezien)) {
     		let role = msg.guild.roles.get(umarniety);
     		let revRole = msg.guild.roles.get(wiezien);
 
     		msg.member.addRole(role);
     		msg.member.removeRole(revRole);
     		msg.reply("z powodu próby włożenia kogoś do łagra zostałeś rozstrzelany.");
-    	} else if(msg.member.roles.has(kgb) || userP || userK || userC || userM) {
-    		msg.reply("Niestety, nie możesz wprowadzić do łagra członka naszych służb.");
     	} else {
     		msg.reply("ty chyba głupi jesteś, że chcesz to użyć bez uprawnień KGB");
     	}
