@@ -80,7 +80,7 @@ bot.on("message", async msg => {
 	    	if(user.roles.has(wiezien)) {
 	    		msg.reply("towarzyszu! Więzień już jest w łagrze!");
 	    	} 
-	    	if(msg.user.roles.has(kgb) || userP || userK || userC || userM) {
+	    	if(user.roles.has(kgb) || userP || userK || userC || userM) {
     			msg.reply("Niestety, nie możesz wprowadzić do łagra członka naszych służb.");
     		}
 	    	if(!user) {
