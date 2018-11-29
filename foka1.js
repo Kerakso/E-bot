@@ -12,6 +12,16 @@ bot.on("ready", () => {
 		if(i == 1) bot.channels.get("517814393472286740").send("t!daily <@146599241022832640>");
 		if(i == 2) bot.channels.get("517814393472286740").send("t!daily <@146599241022832640>");
 	}, 86405000);
+
+	var x = 0;
+
+	var loop1 = setInterval(function() {
+		x++;
+		if(x >2) x = 1;
+
+		if(x == 1) bot.channels.get("517814393472286740").send("no siema foka");
+		if(x == 2) bot.channels.get("517814393472286740").send("foka foka morsaa");
+	}, 12000);
 });
 
 bot.on("message", msg => {
