@@ -5,11 +5,7 @@
 	"main": "bot.js",
 	"scripts": {
 		"start": "node bot.js",
-		"start": "node foka1.js",
-		"start": "node foka2.js",
-		"start": "node foka3.js",
-		"start": "node foka4.js",
-		"start": "node foka5.js"
+		"start": "node foka1.js"
 	},
 	"dependencies": {
 		"discord.js": "11.1.0",
